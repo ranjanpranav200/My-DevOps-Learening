@@ -1,0 +1,76 @@
+SQL Query:- 
+
+1. Create Database
+CREATE DATABASE company_db;
+
+2. Use Database
+USE company_db;
+
+3. Create Table
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    department VARCHAR(30),
+    salary DECIMAL(10,2),
+    joining_date DATE
+);
+
+4. Insert Dummy Data
+INSERT INTO employees
+(emp_id, emp_name, department, salary, joining_date)
+VALUES
+(101, 'John Smith', 'IT', 55000, '2024-01-15'),
+(102, 'Alice Brown', 'HR', 45000, '2023-08-20'),
+(103, 'David Lee', 'Finance', 60000, '2022-05-10'),
+(104, 'Emma Wilson', 'IT', 70000, '2021-12-01'),
+(105, 'Michael Scott', 'Operations', 50000, '2023-03-25');
+
+5. View All Records
+SELECT * FROM employees;
+
+6. Select Specific Columns
+SELECT emp_name, department
+FROM employees;
+
+7. Filter Records
+SELECT *
+FROM employees
+WHERE department = 'IT';
+
+8. Salary Greater Than 50,000
+SELECT *
+FROM employees
+WHERE salary > 50000;
+
+9. Sort by Salary
+SELECT *
+FROM employees
+ORDER BY salary DESC;
+
+10. Count Employees
+SELECT COUNT(*) AS total_employees
+FROM employees;
+
+11. Average Salary
+SELECT AVG(salary) AS avg_salary
+FROM employees;
+
+12. Group By Department
+SELECT department,
+       COUNT(*) AS employee_count,
+       AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department;
+
+13. Update Data
+UPDATE employees
+SET salary = 75000
+WHERE emp_id = 104;
+
+14. Delete Data
+DELETE FROM employees
+WHERE emp_id = 105;
+
+
+15. Verify Final Data
+SELECT * FROM employees;
